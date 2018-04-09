@@ -1,0 +1,86 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "history monkey",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NoIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.YesIntent",
+          "samples": []
+        },
+        {
+          "name": "QuestionIntent",
+          "samples": [
+            "question me",
+            "test my knowledge",
+            "test my knowledge please",
+            "ask me a question",
+            "next question",
+            "please test my knowledge"
+          ]
+        },
+        {
+          "name": "TrueFactIntent",
+          "samples": [
+            "yes",
+            "that is correct",
+            "that is true",
+            "correct",
+            "true"
+          ]
+        },
+        {
+          "name": "FalseFactIntent",
+          "samples": [
+            "no",
+            "not true",
+            "false",
+            "incorrect",
+            "that is incorrect",
+            "that is false"
+          ]
+        },
+        {
+          "name": "ScoreIntent",
+          "samples": [
+            "points",
+            "how many points do  i have",
+            "tell me the score",
+            "what is the score",
+            "what score",
+            "score"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "id": "",
+              "name": {
+                "value": "No",
+                "synonyms": []
+              }
+            }
+          ],
+          "name": "STOP_MESSAGE"
+        }
+      ]
+    }
+  }
+}

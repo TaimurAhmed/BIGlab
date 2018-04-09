@@ -1,0 +1,29 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "history monkey",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "TrueIntent",
+          "samples": [
+            "correct",
+            "yes",
+            "True"
+          ]
+        }
+      ]
+    }
+  }
+}
