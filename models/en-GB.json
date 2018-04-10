@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "history monkey",
+      "invocationName": "quiz rhino",
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
