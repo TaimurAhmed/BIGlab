@@ -47,11 +47,11 @@ var handlers = {
                                                 "test my knowledge'?"
                                               ); 
                   this.emit(':responseReady');
-                },"AMAZON.StopIntent": function () {//Stop app
-                  memo = "You just stopped the app";
-                  arrayPosition = 0;
-                  this.response.speak("Ok hope you had fun, goodbye!"); 
-                  this.emit(':responseReady');
+                },"AMAZON.StopIntent": function () {
+                    memo = "You just stopped the app";
+                    arrayPosition = 0;
+                    this.response.speak("Ok hope you had fun, goodbye!"); // add condition to leave or pause?
+                    this.emit(':responseReady');
                 },"QuestionIntent": function () {//Yes everyone is well
                   memo = "You are on question number " + numberOfQuestions;
                   if(numberOfQuestions > arrayPosition){
