@@ -18,7 +18,7 @@ var answerArray = [
 
 var possibleUserResponsesArray = [
                                     "Is the statement true or false ? ",
-                                    "Is the statement correct or incorrect ? "
+                                    "Is the statement correct or incorrect ? " +
                                     "Yes or no ? "
                                   ];
 // To leave a note of where the application was
