@@ -5,9 +5,9 @@ var Alexa = require("alexa-sdk");
 
 
 var questionArray = [
-                      "The American President in 1928 was Herbert Hoover ?" ,
-                      "The Wall Street Crash happened in 1941." ,
-                      "The Democrats won the elections in 1932."
+                      "The American President in 1928 was Herbert Hoover ? " ,
+                      "The Wall Street Crash happened in 1941. " ,
+                      "The Democrats won the elections in 1932. "
                     ];
 
 var answerArray = [
@@ -17,17 +17,18 @@ var answerArray = [
                   ];
 
 var possibleUserResponsesArray = [
-                                    "Is the statement true or false ?",
-                                    "Is the statement correct or incorrect ?"
-                                    "Yes or no ?"
+                                    "Is the statement true or false ? ",
+                                    "Is the statement correct or incorrect ? "
+                                    "Yes or no ? "
                                   ];
 // To leave a note of where the application was
-var memo = "The application was either just launched or for some reason" +
-           "the cloud rebooted ... sorry but start again";
+var memo = "The application was either just launched or for some reason " +
+           "the cloud rebooted ... sorry but start again ";
 
 var arrayPosition = 0;
 var numberOfQuestions = questionArray.length;
 var score = 0;
+var mediumBreak = "<break strength='medium' />";
 
 
 
@@ -36,7 +37,12 @@ var handlers = {
                   memo = "The app was just launched!";
                   score = 0;
                   arrayPosition = 0;
-                  this.response.speak("Hi, i am history monkey ! <break strength='medium' /> I can help you revise American History from the 1920's. If you'd like that, then just say please test my knowledge?").listen("Let me repeat myself. If you'd like me to test your American History knowledge, then just say 'please test my knowledge'?"); 
+                  this.response.speak(
+                                      "Hi, i am quiz rhino ! " + mediumBreak + 
+                                      "I can help you revise American History from the 1920's." +
+                                      "If you'd like that, then just say please test my knowledge ?"
+                                      ).listen(
+                                                "Let me repeat myself. If you'd like me to test your "American History knowledge, then just say 'please test my knowledge'?"); 
                   this.emit(':responseReady');
                 },"AMAZON.StopIntent": function () {//Stop app
                   memo = "You just stopped the app";
