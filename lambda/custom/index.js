@@ -24,7 +24,7 @@ var possibleUserResponsesArray = [
                                     "Yes or no ?"
                                   ];
 
-var listPosition = 0;// Position in list of questions
+var listPosition = 0;
 var numberOfQuestions = questionArray.length;
 var score = 0;
 
@@ -33,7 +33,7 @@ var score = 0;
 // The handlers object tells Alexa how to handle various actions
 var handlers = {
   "LaunchRequest": function () { //When app launches do this
-    memo = "You just launched history monkey!";
+    memo = "You just launched the app!";
     score = 0;
     listPosition = 0;
     this.response.speak("Hi, i am history monkey ! <break strength='medium' /> I can help you revise American History from the 1920's. If you'd like that, then just say please test my knowledge?").listen("Let me repeat myself. If you'd like me to test your American History knowledge, then just say 'please test my knowledge'?"); 
