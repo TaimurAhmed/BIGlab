@@ -2,9 +2,7 @@
 
 var Alexa = require("alexa-sdk");
 
-// To leave a note of where the application was
-var memo = "The application was either just launched or for some reason" +
-           "the cloud rebooted ... sorry but start again";
+
 
 var questionArray = [
                       "The American President in 1928 was Herbert Hoover ?" ,
@@ -23,6 +21,9 @@ var possibleUserResponsesArray = [
                                     "Is the statement correct or incorrect ?"
                                     "Yes or no ?"
                                   ];
+// To leave a note of where the application was
+var memo = "The application was either just launched or for some reason" +
+           "the cloud rebooted ... sorry but start again";
 
 var listPosition = 0;
 var numberOfQuestions = questionArray.length;
@@ -30,7 +31,6 @@ var score = 0;
 
 
 
-// The handlers object tells Alexa how to handle various actions
 var handlers = {
   "LaunchRequest": function () { //When app launches do this
     memo = "You just launched the app!";
