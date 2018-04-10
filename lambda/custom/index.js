@@ -1,20 +1,28 @@
 "use strict";
 
 var Alexa = require("alexa-sdk");
+
 // To leave a note of where the application was
-var memo = " The application was either just launched or for some reason "
-           + " the cloud rebooted ... sorry but start again ";
+var memo = "The application was either just launched or for some reason" +
+           "the cloud rebooted ... sorry but start again";
+
 var questionArray = [
-    "The American President in 1928 was Herbert Hoover? Is this statement, correct or incorrect?",
-    "The Wall Street Crash happened in 1941. Is this true or false?",
-    "The Democrats won the elections in 1932. Yes or no?"
-];
+                      "The American President in 1928 was Herbert Hoover ?" ,
+                      "The Wall Street Crash happened in 1941." ,
+                      "The Democrats won the elections in 1932."
+                    ];
 
 var answerArray = [
-    true,
-    false,
-    true
-];
+                      true,
+                      false,
+                      true
+                  ];
+
+var possibleUserResponsesArray = [
+                                    "Is the statement true or false ?",
+                                    "Is the statement correct or incorrect ?"
+                                    "Yes or no ?"
+                                  ];
 
 var listPosition = 0;// Position in list of questions
 var numberOfQuestions = questionArray.length;
