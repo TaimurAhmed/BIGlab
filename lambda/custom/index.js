@@ -4,7 +4,7 @@ var Alexa = require("alexa-sdk");
 // To leave a note of where the application was
 var memo = " The application was either just launched or for some reason "
            + " the cloud rebooted ... sorry but start again ";
-var listArray = [
+var questionArray = [
     "The American President in 1928 was Herbert Hoover? Is this statement, correct or incorrect?",
     "The Wall Street Crash happened in 1941. Is this true or false?",
     "The Democrats won the elections in 1932. Yes or no?"
@@ -17,7 +17,7 @@ var answerArray = [
 ];
 
 var listPosition = 0;// Position in list of questions
-var numberOfQuestions = listArray.length;
+var numberOfQuestions = questionArray.length;
 var score = 0;
 
 
@@ -38,7 +38,7 @@ var handlers = {
   },"QuestionIntent": function () {//Yes everyone is well
     memo = "You are on question number " + numberOfQuestions;
     if(numberOfQuestions > listPosition){
-        var say = listArray[listPosition];
+        var say = questionArray[listPosition];
         listPosition++;
     }else{
         var say = "We have run out of flash cards for now! There were only " + numberOfQuestions+ ". I shall reset the questions and score,so that we can start again or you could ask me to stop for now.";
