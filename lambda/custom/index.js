@@ -33,16 +33,19 @@ var mediumBreak = "<break strength='medium' />";
 
 
 var handlers = {
-                "LaunchRequest": function () { //When app launches do this
+                "LaunchRequest": function () {
                   memo = "The app was just launched!";
                   score = 0;
                   arrayPosition = 0;
                   this.response.speak(
                                       "Hi, i am quiz rhino ! " + mediumBreak + 
                                       "I can help you revise American History from the 1920's." +
-                                      "If you'd like that, then just say please test my knowledge ?"
+                                      "If you'd like that, then just say please test my knowledge ? "
                                       ).listen(
-                                                "Let me repeat myself. If you'd like me to test your "American History knowledge, then just say 'please test my knowledge'?"); 
+                                                "Let me repeat myself. If you'd like me to test your " +
+                                                "American History knowledge, then just say 'please "+
+                                                "test my knowledge'?"
+                                              ); 
                   this.emit(':responseReady');
                 },"AMAZON.StopIntent": function () {//Stop app
                   memo = "You just stopped the app";
