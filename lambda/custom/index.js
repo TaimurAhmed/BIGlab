@@ -1,10 +1,9 @@
-//basic template
-//One shot interfaces
 "use strict";
 
-//Include alexa SDK
 var Alexa = require("alexa-sdk");
-var memo = "The application was either just launched or for some reason the cloud rebooted ... if it is the latter you'll have to wing it mate";
+// To leave a note of where the application was
+var memo = " The application was either just launched or for some reason "
+           + " the cloud rebooted ... sorry but start again ";
 var listArray = [
     "The American President in 1928 was Herbert Hoover? Is this statement, correct or incorrect?",
     "The Wall Street Crash happened in 1941. Is this true or false?",
