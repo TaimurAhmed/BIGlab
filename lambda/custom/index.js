@@ -1,6 +1,6 @@
 "use strict";
 
-var Alexa = require("alexa-sdk");
+var Alexa = require("alexa-sdk"); 
 
 
 
