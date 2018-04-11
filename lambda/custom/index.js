@@ -34,7 +34,6 @@ var SSMLmediumBreak = "<break strength='medium' />";
 
 
 
-
 var handlers = 
    {
     "LaunchRequest": function () {
