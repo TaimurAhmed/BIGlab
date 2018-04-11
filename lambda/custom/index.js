@@ -27,10 +27,11 @@ const possibleUserResponsesArray = [
                                   ];
 
 // To leave a note of where the application was
-var memo = "The system just booted. This shouldnt happen.";
+var memo = "The program just started. This shouldnt happen.";
+var say  = memo;
 var arrayPosition = 0;
 var score = 0;
-var SSMLmediumBreak = "<break strength='medium' />";
+var ssmlMediumBreak = "<break strength='medium' />";
 
 
 
