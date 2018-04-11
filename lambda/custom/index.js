@@ -1,6 +1,8 @@
 "use strict";
+/*jshint esversion: 6 */
+/* jshint node: true */
 
-var Alexa = require("alexa-sdk"); 
+const Alexa = require("alexa-sdk"); 
 
 
 
