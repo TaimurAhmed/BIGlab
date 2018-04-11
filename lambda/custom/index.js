@@ -30,7 +30,7 @@ const possibleUserResponsesArray = [
 var memo = "The system just booted. This shouldnt happen.";
 var arrayPosition = 0;
 var score = 0;
-var mediumBreak = "<break strength='medium' />";
+var SSMLmediumBreak = "<break strength='medium' />";
 
 
 
