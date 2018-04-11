@@ -42,7 +42,7 @@ var handlers =
       score = 0;
       arrayPosition = 0;
       this.response.speak(
-                          "Hi, i am quiz rhino ! " + mediumBreak + 
+                          "Hi, i am quiz rhino ! " + ssmlMediumBreak + 
                           "I can help you revise American History from the 1920's ." +
                           "If you'd like that, then just say please test my knowledge ? "
                           ).listen(
