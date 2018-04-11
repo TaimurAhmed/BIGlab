@@ -34,10 +34,11 @@ var SSMLmediumBreak = "<break strength='medium' />";
 
 
 
+
 var handlers = 
    {
     "LaunchRequest": function () {
-      memo = "The app was just launched!";
+      memo = "You just launched the app!";
       score = 0;
       arrayPosition = 0;
       this.response.speak(
@@ -51,7 +52,7 @@ var handlers =
                                   ); 
       this.emit(':responseReady');
     },"AMAZON.StopIntent": function () {
-        memo = "You just stopped the app";
+        memo = "You just stopped the app!";
         arrayPosition = 0;
         this.response.speak("Ok hope you had fun, goodbye!"); // add condition to leave or pause?
         this.emit(':responseReady');
@@ -103,7 +104,7 @@ var handlers =
 // This is the function that AWS Lambda calls every time Alexa uses your skill.
 exports.handler = function(event, context, callback){
   // Set up the Alexa object
-  var alexa = Alexa.handler(event, context);
+  const alexa = Alexa.handler(event, context);
     // Register Handlers
     alexa.registerHandlers(handlers);
     // Start our Alexa code
