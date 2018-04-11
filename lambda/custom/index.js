@@ -12,22 +12,23 @@ const questionArray = [
                       "The Democrats won the elections in 1932. "
                     ];
 
+const numberOfQuestions = questionArray.length;
+
 const answerArray = [
                       true,
                       false,
                       true
-                  ];
+                    ];
 
 const possibleUserResponsesArray = [
                                     "Is the statement true or false ? ",
                                     "Is the statement correct or incorrect ? " +
                                     "Yes or no ? "
                                   ];
+
 // To leave a note of where the application was
 var memo = "The system just booted. This shouldnt happen.";
-
 var arrayPosition = 0;
-const numberOfQuestions = questionArray.length;
 var score = 0;
 var mediumBreak = "<break strength='medium' />";
 
