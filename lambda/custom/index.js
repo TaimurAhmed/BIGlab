@@ -6,29 +6,28 @@ const Alexa = require("alexa-sdk");
 
 
 
-var questionArray = [
+const questionArray = [
                       "The American President in 1928 was Herbert Hoover ? " ,
                       "The Wall Street Crash happened in 1941. " ,
                       "The Democrats won the elections in 1932. "
                     ];
 
-var answerArray = [
+const answerArray = [
                       true,
                       false,
                       true
                   ];
 
-var possibleUserResponsesArray = [
+const possibleUserResponsesArray = [
                                     "Is the statement true or false ? ",
                                     "Is the statement correct or incorrect ? " +
                                     "Yes or no ? "
                                   ];
 // To leave a note of where the application was
-var memo = "The application was either just launched or for some reason " +
-           "the cloud rebooted ... sorry but start again ";
+var memo = "The system just booted. This shouldnt happen.";
 
 var arrayPosition = 0;
-var numberOfQuestions = questionArray.length;
+const numberOfQuestions = questionArray.length;
 var score = 0;
 var mediumBreak = "<break strength='medium' />";
 
