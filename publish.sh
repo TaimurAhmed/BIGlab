@@ -1,3 +1,4 @@
+# A script to only deploy lambda code, instead of deploying via ask cli 
 rm index.zip 
 cd lambda
 cd custom 
