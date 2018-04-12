@@ -3,3 +3,4 @@ node_modules/*
 .ask
 lambda/custom/node_modules/*
 index.zip
+package-lock.json
