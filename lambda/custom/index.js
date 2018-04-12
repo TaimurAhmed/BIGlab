@@ -2,6 +2,8 @@
 /*jshint esversion: 6 */
 /* jshint node: true */
 
+/*monkey*/
+
 const Alexa = require("alexa-sdk"); 
 
 
