@@ -3,10 +3,11 @@
 /* jshint node: true */
 
 const Alexa = require("alexa-sdk");
-const question = require("./question.js");
-const questionArray = question.returnAllQuestions();
+const Question = require("./question.js");
+
+const questionArray = Question.returnAllQuestions();
 const numberOfQuestions = questionArray.length;
-const answerArray = question.returnAllAnswers();
+const answerArray = Question.returnAllAnswers();
 
 const possibleUserResponsesArray = [
   "Is the statement true or false ? ",
