@@ -6,12 +6,7 @@ const Alexa = require("alexa-sdk");
 const question = require("./question.js");
 const questionArray = question.returnAllQuestions();
 const numberOfQuestions = questionArray.length;
-
-const answerArray = [
-  true,
-  false,
-  true
-];
+const answerArray = question.returnAllAnswers();
 
 const possibleUserResponsesArray = [
   "Is the statement true or false ? ",
