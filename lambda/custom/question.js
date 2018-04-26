@@ -9,6 +9,13 @@ module.exports = {
             "The Democrats won the elections in 1932. "
         ];
         return questionArray;
+    },
+    returnAllAnswers: function() {
+        const answerArray = [
+            true,
+            false,
+            true
+        ];
     }
 
 };
