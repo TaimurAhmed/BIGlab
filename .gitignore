@@ -2,5 +2,5 @@
 node_modules/*
 .ask
 lambda/custom/node_modules/*
-index.zip
+*.zip
 package-lock.json
