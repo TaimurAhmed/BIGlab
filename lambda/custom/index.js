@@ -4,17 +4,12 @@
 
 const Alexa = require("alexa-sdk");
 const Question = require("./question.js");
+const Prompt = require("./prompts.js");
 
 const questionArray = Question.returnAllQuestions();
 const numberOfQuestions = questionArray.length;
 const answerArray = Question.returnAllAnswers();
-
-const possibleUserResponsesArray = [
-  "Is the statement true or false ? ",
-  "Is the statement correct or incorrect ? " +
-  "Yes or no ? "
-];
-
+const possibleUserResponsesArray = Prompt.returnAllQuesPrompts();
 // To leave a note of where the application was
 var memo = "The program just started. This shouldnt happen.";
 var say = memo;
