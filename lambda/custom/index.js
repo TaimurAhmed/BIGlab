@@ -2,8 +2,6 @@
 /*jshint esversion: 6 */
 /* jshint node: true */
 
-/*monkeyfsafsa*/
-
 const Alexa = require("alexa-sdk");
 const question = require("./question.js");
 const questionArray = question.returnAllQuestions();
