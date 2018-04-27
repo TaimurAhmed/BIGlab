@@ -32,7 +32,7 @@ var handlers = {
           "knowledge? Otherwise " + helpMessage;
     score = 0;
     arrayPosition = 0;
-    this.response.speak(say).listen("Let me repeat myself." + say );
+    this.response.speak(say).listen("Let me repeat myself ." + say );
     this.emit(':responseReady');
   },
   "AMAZON.StopIntent": function() {
