@@ -18,23 +18,21 @@ var say = memo;
 var arrayPosition = 0;
 var score = 0;
 var ssmlMediumBreak = "<break strength='medium' />";
+const helpMessage = "Tell Alexa to ask Quiz Rhino for help!";
 
 
 
 var handlers = {
   "LaunchRequest": function() {
-    memo = "You just launched the app!";
+    memo = "You just launched Quiz Rhino! If you need help, " +
+           helpMessage;
+    say = "Hi, welcome to Quiz Rhino ! " + ssmlMediumBreak +
+          "I can help you revise American History from the 1920's ." +
+          "If you'd like that, then just say please test my "+
+          "knowledge? Otherwise " + helpMessage;
     score = 0;
     arrayPosition = 0;
-    this.response.speak(
-      "Hi, i am quiz rhino ! " + ssmlMediumBreak +
-      "I can help you revise American History from the 1920's ." +
-      "If you'd like that, then just say please test my knowledge ? "
-    ).listen(
-      "Let me repeat myself. If you'd like me to test your " +
-      "American History knowledge, then just say 'please " +
-      "test my knowledge'?"
-    );
+    this.response.speak(say).listen("Let me repeat myself." + say );
     this.emit(':responseReady');
   },
   "AMAZON.StopIntent": function() {
