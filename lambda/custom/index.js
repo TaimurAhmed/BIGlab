@@ -7,9 +7,10 @@ const Question = require("./question.js");
 const Prompt = require("./prompts.js");
 
 const questionArray = Question.returnAllQuestions();
-const numberOfQuestions = questionArray.length;
 const answerArray = Question.returnAllAnswers();
 const possibleUserResponsesArray = Prompt.returnAllQuesPrompts();
+
+const numberOfQuestions = questionArray.length;
 // To leave a note of where the application was
 var memo = "The program just started. This shouldnt happen.";
 var say = memo;
