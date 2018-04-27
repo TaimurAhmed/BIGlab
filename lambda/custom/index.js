@@ -11,8 +11,10 @@ const answerArray = Question.returnAllAnswers();
 const possibleUserResponsesArray = Prompt.returnAllQuesPrompts();
 
 const numberOfQuestions = questionArray.length;
-// To leave a note of where the application was
-var memo = "The program just started. This shouldnt happen.";
+
+// Use memo as a pointer for user to happened last time
+var memo = "Quiz Rhino just started! If you need some help " +
+           "tell Alexa to ask Quiz Rhino for help!";
 var say = memo;
 var arrayPosition = 0;
 var score = 0;
