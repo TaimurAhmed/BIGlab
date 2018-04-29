@@ -19,7 +19,7 @@ var arrayPosition = 0;
 var score = 0;
 var ssmlMediumBreak = "<break strength='medium' />";
 const helpMessage = "If you are confused or need help, then tell Alexa to ask Quiz Rhino for help!";
-
+const memoPrefix = "You asked ";
 
 
 var handlers = {
@@ -35,8 +35,7 @@ var handlers = {
     this.emit(':responseReady');
   },
   "AMAZON.HelpIntent": function () { 
-    memo = "Just asked for help but before that, " 
-           + memo;
+    memo = "Just asked for help but before that, " + memoPrefix + memo;
     say = " You can tell Alexa to launch or stop quiz rhino, " +
           " to start or alternatively, to stop the app. " +
           " For example, saying; Alexa! Stop quiz rhino will stop " +
@@ -45,9 +44,11 @@ var handlers = {
     this.emit(':responseReady');
   },
   "AMAZON.StopIntent": function() {
-    memo = "You just stopped the app!";
+    memo = "Just asked to stop the app!";
+    say = "i hope this was a good experience! goodbye!"
+    score = 0; 
     arrayPosition = 0;
-    this.response.speak("Ok hope you had fun, goodbye!");
+    this.response.speak(speak);
     this.emit(':responseReady');
   },
   "AMAZON.NextIntent": function() {  //Intent has been extended for user
