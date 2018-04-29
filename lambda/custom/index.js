@@ -26,16 +26,16 @@ var handlers = {
   "LaunchRequest": function() {
     memo = "Launched Quiz Rhino!" + helpMessage;
     say = "Hi, welcome to Quiz Rhino ! " + ssmlMediumBreak +
-          "I can help you revise American History from the 1920's ." +
-          "If you'd like that, then just say please test my "+
-          "knowledge? Otherwise " + helpMessage;
+          "I will help you revise American History from the 1920's !" +
+          "If you'd like that, then just say ask me a question !"+
+          "Otherwise " + helpMessage;
     score = 0;
     arrayPosition = 0;
     this.response.speak(say).listen("Let me repeat myself ." + say );
     this.emit(':responseReady');
   },
   "AMAZON.HelpIntent": function () { 
-    memo = "You just asked for help but before that, " 
+    memo = "Just asked for help but before that, " 
            + memo;
     say = " You can tell Alexa to launch or stop quiz rhino, " +
           " to start or alternatively, to stop the app. " +
@@ -47,10 +47,10 @@ var handlers = {
   "AMAZON.StopIntent": function() {
     memo = "You just stopped the app!";
     arrayPosition = 0;
-    this.response.speak("Ok hope you had fun, goodbye!"); // add condition to leave or pause?
+    this.response.speak("Ok hope you had fun, goodbye!");
     this.emit(':responseReady');
   },
-  "QuestionIntent": function() { //Yes everyone is well
+  "AMAZON.NextIntent": function() {  //Intent has been extended for user
     memo = "You are on question number " + numberOfQuestions;
     if (numberOfQuestions > arrayPosition) {
       var say = questionArray[arrayPosition];
