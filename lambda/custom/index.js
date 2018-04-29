@@ -54,14 +54,14 @@ var handlers = {
   "AMAZON.NextIntent": function() {  //Intent has been extended for user
     memo = "You are on question number " + numberOfQuestions;
     if (numberOfQuestions > arrayPosition) {
-      var say = questionArray[arrayPosition];
-      arrayPosition++;
+        var say = questionArray[arrayPosition];
+        arrayPosition++;
     } else {
-      var say = "We have run out of flash cards for now! There were only " + numberOfQuestions + ". I shall reset the questions and score,so that we can start again or you could ask me to stop for now.";
-      arrayPosition = 0;
-      score = 0;
+        var say = "We have run out of flash cards for now! There were only " + numberOfQuestions + ". I shall reset the questions and score,so that we can start again or you could ask me to stop for now.";
+        arrayPosition = 0;
+        score = 0;
     }
-    this.response.speak(say).listen("I will repeat that again . . ." + say);
+    this.response.speak(say);
     this.emit(':responseReady');
   },
   "SessionEndedRequest": function() {
