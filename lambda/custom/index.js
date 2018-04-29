@@ -48,7 +48,7 @@ var handlers = {
     say = "i hope this was a good experience! goodbye!"
     score = 0; 
     arrayPosition = 0;
-    this.response.speak(speak);
+    this.response.speak(say);
     this.emit(':responseReady');
   },
   "AMAZON.NextIntent": function() {  //Intent has been extended for user
