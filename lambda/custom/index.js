@@ -67,7 +67,7 @@ var handlers = {
   "SessionEndedRequest": function() {
     console.log(`Session ended in help state: ${this.event.request.reason}`);
   },
-  "TrueFactIntent": function() { //If true
+  "AMAZON.YesIntent": function() { //If true
     memo = "You just answered true to the last question";
     var lastQuestion = arrayPosition - 1;
     var say;
