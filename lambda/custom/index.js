@@ -18,14 +18,13 @@ var say = memo;
 var arrayPosition = 0;
 var score = 0;
 var ssmlMediumBreak = "<break strength='medium' />";
-const helpMessage = "Tell Alexa to ask Quiz Rhino for help!";
+const helpMessage = "If you are confused or need help, then tell Alexa to ask Quiz Rhino for help!";
 
 
 
 var handlers = {
   "LaunchRequest": function() {
-    memo = "You just launched Quiz Rhino! If you need help, " +
-           helpMessage;
+    memo = "Launched Quiz Rhino!" + helpMessage;
     say = "Hi, welcome to Quiz Rhino ! " + ssmlMediumBreak +
           "I can help you revise American History from the 1920's ." +
           "If you'd like that, then just say please test my "+
@@ -33,6 +32,16 @@ var handlers = {
     score = 0;
     arrayPosition = 0;
     this.response.speak(say).listen("Let me repeat myself ." + say );
+    this.emit(':responseReady');
+  },
+  "AMAZON.HelpIntent": function () { 
+    memo = "You just asked for help but before that, " 
+           + memo;
+    say = " You can tell Alexa to launch or stop quiz rhino, " +
+          " to start or alternatively, to stop the app. " +
+          " For example, saying; Alexa! Stop quiz rhino will stop " +
+          " the app";   
+    this.response.speak(say);
     this.emit(':responseReady');
   },
   "AMAZON.StopIntent": function() {
