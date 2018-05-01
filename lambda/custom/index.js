@@ -14,6 +14,7 @@ const numberOfQuestions = questionArray.length;
 
 // Use memo as a pointer for user to happened last time
 var memo = "Quiz Rhino just restarted!";
+var lastQuestion = "No questions asked yet";
 var say = memo;
 var arrayPosition = 0;
 var score = 0;
@@ -52,15 +53,19 @@ var handlers = {
     this.emit(':responseReady');
   },
   "AMAZON.NextIntent": function() {  //Intent has been extended for user
-    memo = "You are on question number " + numberOfQuestions;
     if (numberOfQuestions > arrayPosition) {
-        var say = questionArray[arrayPosition];
+        memo = lastQuestion = say = questionArray[arrayPosition];
         arrayPosition++;
     } else {
-        var say = "We have run out of flash cards for now! There were only " + numberOfQuestions + ". I shall reset the questions and score,so that we can start again or you could ask me to stop for now.";
+        memo = lastQuestion= say = "We have run out of flash cards for now! " +
+                                    "There were only " + numberOfQuestions + 
+                                    " . I shall reset the questions and score, " +
+                                    " so that we can start again or you could ask " +
+                                    " me to stop for now.";
         arrayPosition = 0;
         score = 0;
     }
+    
     this.response.speak(say);
     this.emit(':responseReady');
   },
