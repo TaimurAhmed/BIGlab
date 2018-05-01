@@ -16,6 +16,7 @@ module.exports = {
             false,
             true
         ];
+        return answerArray;
     }
 
 };
