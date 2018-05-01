@@ -21,6 +21,7 @@ var score = 0;
 var ssmlMediumBreak = "<break strength='medium' />";
 const helpMessage = "If you are confused or need help, then tell Alexa to ask Quiz Rhino for help!";
 const memoPrefix = "You asked ";
+const runOutMsg = "We have run out of flash cards for now!";
 
 
 var handlers = {
@@ -74,13 +75,17 @@ var handlers = {
   },
   "AMAZON.YesIntent": function() { 
     memo = "You just answered true to the last question";
-    var lastQuestionID = arrayPosition - 1;
-    if (answerArray[lastQuestionID] == true) {
-        say = "That is correct, that was true";
+    if (arrayPosition > numberOfQuestions){
+        say = runOutMsg;
+    }else if (answerArray[lastQuestionID]) {
+        say = "That is correct, that was true so you win a point!";
         score++;
     } else {
-        say = "That is incorrect, that was actually false";
+        say = "That is incorrect, that was actually false. You dont get any points!";
     }
+    
+    lastQuestionID = arrayPosition - 1;
+    arrayPosition++;
     
     this.response.speak(say);
     this.emit(':responseReady');
