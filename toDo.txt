@@ -1,11 +1,6 @@
 dont you dare abstract anymore
 fix bugs
-use AMAZN invocations
-finish going throught the program
-
-
-extensions:
-
-negative marks
-recall what you were doing last
-scoreboard
+use AMAZON invocations
+add more questions and answers
+recall questions that the user got wrong, along with correct answer
+add negative mode option
