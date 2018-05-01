@@ -72,16 +72,16 @@ var handlers = {
   "SessionEndedRequest": function() {
     console.log(`Session ended in help state: ${this.event.request.reason}`);
   },
-  "AMAZON.YesIntent": function() { //If true
+  "AMAZON.YesIntent": function() { 
     memo = "You just answered true to the last question";
-    var lastQuestion = arrayPosition - 1;
-    var say;
-    if (answerArray[lastQuestion] == true) {
-      var say = "That is correct, that was true";
-      score++;
+    var lastQuestionID = arrayPosition - 1;
+    if (answerArray[lastQuestionID] == true) {
+        say = "That is correct, that was true";
+        score++;
     } else {
-      var say = "That is incorrect, that was actually false";
+        say = "That is incorrect, that was actually false";
     }
+    
     this.response.speak(say);
     this.emit(':responseReady');
   },
