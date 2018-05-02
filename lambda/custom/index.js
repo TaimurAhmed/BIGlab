@@ -14,11 +14,12 @@ const numberOfQuestions = questionArray.length;
 
 // Use memo as a pointer for user to happened last time
 var memo = "Quiz Rhino just restarted!";
-var lastQuestion = "No questions asked yet";
+var lastQuestionMemo = "No questions asked yet";
 var say = memo;
 var arrayPosition = 0;
+var answerArrayPos = 0;
 var score = 0;
-var ssmlMediumBreak = "<break strength='medium' />";
+const ssmlMediumBreak = "<break strength='medium' />";
 const helpMessage = "If you are confused or need help, then tell Alexa to ask Quiz Rhino for help!";
 const memoPrefix = "You asked ";
 const runOutMsg = "We have run out of flash cards for now!";
@@ -55,7 +56,7 @@ var handlers = {
   },
   "AMAZON.NextIntent": function() {  //Intent has been extended for user
     if (numberOfQuestions > arrayPosition) {
-        memo = lastQuestion = say = questionArray[arrayPosition];
+        memo = lastQuestionMemo = say = questionArray[arrayPosition];
         arrayPosition++;
     } else {
         memo = lastQuestion= say = "We have run out of flash cards for now! " +
@@ -74,20 +75,7 @@ var handlers = {
     console.log(`Session ended in help state: ${this.event.request.reason}`);
   },
   "AMAZON.YesIntent": function() { 
-    memo = "You just answered true to the last question";
-    if (arrayPosition > numberOfQuestions){
-        say = runOutMsg;
-    }else if (answerArray[lastQuestionID]) {
-        say = "That is correct, that was true so you win a point!";
-        score++;
-    } else {
-        say = "That is incorrect, that was actually false. You dont get any points!";
-    }
-    
-    lastQuestionID = arrayPosition - 1;
-    arrayPosition++;
-    
-    this.response.speak(say);
+    this.response.speak(trueOrFalse(true));
     this.emit(':responseReady');
   },
   "FalseFactIntent": function() { //If true
@@ -107,6 +95,25 @@ var handlers = {
     this.response.speak("your score is " + score);
     this.emit(':responseReady');
   }
+};
+
+function trueOrFalse(userIntentBool){
+   memo = "You just answered " + String(userIntentBool) + 
+          ", for the last question";
+  var correctAnswer = answerArray[answerArrayPos];
+
+    if (arrayPosition > numberOfQuestions){
+        say = runOutMsg;
+    }else if (correctAnswer == userIntentBool) {
+        say = "That is correct, that fact was " + correctAnswer + 
+              " so you win a point!";
+        score++;
+    } else {
+        say = "That is incorrect, that fact was actually " + correctAnswer + 
+              ". You dont get any points!";
+    }
+    answerArrayPos++;
+    return say;
 };
 
 // This is the function that AWS Lambda calls every time Alexa uses your skill.
