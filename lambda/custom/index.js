@@ -78,17 +78,8 @@ var handlers = {
     this.response.speak(trueOrFalse(true));
     this.emit(':responseReady');
   },
-  "FalseFactIntent": function() { //If true
-    memo = "You just answered true to the last question";
-    var lastQuestion = arrayPosition - 1;
-    var say;
-    if (answerArray[lastQuestion] == false) {
-      var say = "That is correct, that was false";
-      score++;
-    } else {
-      var say = "That is incorrect, that was actually true";
-    }
-    this.response.speak(say);
+  "FalseFactIntent": function() {
+    this.response.speak(trueOrFalse(false));
     this.emit(':responseReady');
   },
   "ScoreIntent": function() { //If true
