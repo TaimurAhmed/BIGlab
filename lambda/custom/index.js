@@ -78,7 +78,7 @@ var handlers = {
     this.response.speak(trueOrFalse(true));
     this.emit(':responseReady');
   },
-  "FalseFactIntent": function() {
+  "AMAZON.NoIntent": function() {
     this.response.speak(trueOrFalse(false));
     this.emit(':responseReady');
   },
