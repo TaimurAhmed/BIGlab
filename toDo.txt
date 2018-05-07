@@ -1,6 +1,3 @@
-dont you dare abstract anymore
-fix bugs
-use AMAZON invocations
-add more questions and answers
-recall questions that the user got wrong, along with correct answer
-add negative mode option
+add questions
+add feature for user recalling the last question
+add negative mode (optional)
