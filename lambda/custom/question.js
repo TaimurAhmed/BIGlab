@@ -28,10 +28,9 @@ module.exports = {
         "Sputnik was a USSR telecommunications satellite - the first man-made object in Space",
         "An important aspect of the Cold War was the Space Race - the competition between the USA and USSR to take control of Space. After the USSR put the first man in Space in 1961, the US President John F Kennedy challenged Americans to put a man on the moon by the end of the decade, which they did in 1969.",
         "The primary objective of NATO (North Atlantic Treaty Organisation) was to resist an attack by the USSR on the USA or its Allies in Western Europe based on the principle that an attack on one of its members was an attack on all of them."
-
         ];
         
         return contextArray;
-    };
+    }
 
 };
