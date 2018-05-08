@@ -104,6 +104,7 @@ function trueOrFalse(userIntentBool){
         say = "That is incorrect, that fact was actually " + correctAnswer + 
               ". You dont get any points!";
     }
+    say += contextArray[answerArrayPos]; // Context to relevant question answered
     answerArrayPos++;
     return say;
 };
