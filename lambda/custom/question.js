@@ -21,6 +21,13 @@ module.exports = {
         ];
         
         return answerArray;
-    }
+    },
+    returnAllContext: function(){
+        const contextArray = [
+
+        ];
+        
+        return contextArray;
+    };
 
 };
