@@ -4,18 +4,22 @@ module.exports = {
 
     returnAllQuestions: function() {
         const questionArray = [
-            "The American President in 1928 was Herbert Hoover ? ",
-            "The Wall Street Crash happened in 1941. ",
-            "The Democrats won the elections in 1932. "
+            "In the context of the Cold War, the acronym MAD stands for Mutually Assured Destruction?",
+            "The Sputnik was a popular type of submarine used by the former USSR",
+            "In 1961 US president, John F Kennedy , challenged the USA to put a man on the moon by the end of the decade",
+            "The primary reason behind the creation of NATO was to enable economic coperation between the allies and Germany"
         ];
+        
         return questionArray;
     },
     returnAllAnswers: function() {
         const answerArray = [
             true,
             false,
-            true
+            true,
+            false
         ];
+        
         return answerArray;
     }
 
