@@ -12,6 +12,7 @@ const contextArray = Question.returnAllContext();
 const possibleUserResponsesArray = Prompt.returnAllQuesPrompts();
 
 const numberOfQuestions = questionArray.length;
+const numberofUserPrompts = possibleUserResponsesArray.length;
 
 // Use memo as a pointer for user to happened last time
 var memo = "Quiz Rhino just restarted!";
@@ -68,6 +69,8 @@ var handlers = {
         arrayPosition = 0;
         score = 0;
     }
+
+    say += ssmlMediumBreak + possibleUserResponsesArray[getRandomInt(numberofUserPrompts)];
     
     this.response.speak(say);
     this.emit(':responseReady');
@@ -108,6 +111,10 @@ function trueOrFalse(userIntentBool){
     answerArrayPos++;
     return say;
 };
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
 
 // This is the function that AWS Lambda calls every time Alexa uses your skill.
 exports.handler = function(event, context, callback) {
