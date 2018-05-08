@@ -8,6 +8,7 @@ const Prompt = require("./prompts.js");
 
 const questionArray = Question.returnAllQuestions();
 const answerArray = Question.returnAllAnswers();
+const contextArray = Question.returnAllContext();
 const possibleUserResponsesArray = Prompt.returnAllQuesPrompts();
 
 const numberOfQuestions = questionArray.length;
@@ -82,7 +83,7 @@ var handlers = {
     this.response.speak(trueOrFalse(false));
     this.emit(':responseReady');
   },
-  "ScoreIntent": function() { //If true
+  "ScoreIntent": function() {
     this.response.speak("your score is " + score);
     this.emit(':responseReady');
   }
