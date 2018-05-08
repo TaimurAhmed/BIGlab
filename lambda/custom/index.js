@@ -61,7 +61,7 @@ var handlers = {
         memo = lastQuestionMemo = say = questionArray[arrayPosition];
         arrayPosition++;
     } else {
-        memo = lastQuestion= say = "We have run out of flash cards for now! " +
+        memo = lastQuestionMemo = say = "We have run out of flash cards for now! " +
                                     "There were only " + numberOfQuestions + 
                                     " . I shall reset the questions and score, " +
                                     " so that we can start again or you could ask " +
@@ -88,6 +88,11 @@ var handlers = {
   },
   "ScoreIntent": function() {
     this.response.speak("your score is " + score);
+    this.emit(':responseReady');
+  },
+  "lastQuestionIntent": function(){
+    say = lastQuestionMemo;
+    this.response.speak(say);
     this.emit(':responseReady');
   }
 };
