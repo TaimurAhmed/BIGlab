@@ -1,3 +1,1 @@
-add questions
-add feature for user recalling the last question
-add negative mode (optional)
+do testing and tweak front end
