@@ -4,9 +4,9 @@ module.exports = {
     
     returnAllQuesPrompts: function() {
         const promptArray = [
-            "Is the statement true or false ? ",
-            "Is the statement correct or incorrect ? ",
-            "Yes or no ? "
+            " True or False ? ",
+            " Correct or Incorrect ? ",
+            " Yes or No? "
         ];
         return promptArray;
     }
