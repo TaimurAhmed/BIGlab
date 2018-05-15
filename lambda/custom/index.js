@@ -101,7 +101,7 @@ var handlers = {
     this.response.speak(trueOrFalse(true));
     this.emit(':responseReady');
   },
-  "AMAZON.NoIntent": function() {
+  "NoIntent": function() {
     this.response.speak(trueOrFalse(false));
     this.emit(':responseReady');
   },
