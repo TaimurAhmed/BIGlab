@@ -21,8 +21,8 @@ var say = memo;
 var arrayPosition = 0;
 var answerArrayPos = 0;
 var score = 0;
-const ssmlMediumBreak = "<break strength='medium' />";
-const helpMessage = "If you are confused or need help, then tell Alexa to ask Quiz Rhino for help!";
+const ssmlMediumBreak = "<break time = '0.5s' />";
+const helpMessage = "If you are confused or need help, then tell Alexa to ask Quiz Rhino for help";
 const memoPrefix = "You asked ";
 const runOutMsg = "We have run out of flash cards for now!";
 
@@ -41,10 +41,29 @@ var handlers = {
   },
   "AMAZON.HelpIntent": function () { 
     memo = "Just asked for help but before that, " + memoPrefix + memo;
-    say = " You can tell Alexa to launch or stop quiz rhino, " +
-          " to start or alternatively, to stop the app. " +
-          " For example, saying; Alexa! Stop quiz rhino will stop " +
-          " the app";   
+    say = " Okay, i will explain how Quiz Rhino works! " +
+          ssmlMediumBreak +
+          " To start the app , say" +
+          " Alexa launch Quiz Rhino! " +
+          " Saying that via Alexa will launch the app ." +
+          ssmlMediumBreak +
+          " If you want to stop at any point, it is simple . " +
+          ssmlMediumBreak +
+          " Just say Alexa stop Quiz Rhino ." +
+          " Doing so will exit Quiz Rhino and reset your score ." +
+          ssmlMediumBreak +
+          ssmlMediumBreak +
+          " Ofcourse the point of Quiz Rhino is to quiz you ! " +
+          ssmlMediumBreak +
+          " To get Quiz Rhino to give you a question, just say " +
+          " Alexa tell quiz rhino to give me a question" +
+          ssmlMediumBreak +
+          ssmlMediumBreak +
+          " In this game you can score points by guessing whether the " +
+          " assertion is correct or incorrect." +
+          ssmlMediumBreak +
+          " For example to suggest that the statement was correct say ," +
+          " Alexa tell quiz rhino that is correct ";   
     this.response.speak(say);
     this.emit(':responseReady');
   },
@@ -78,7 +97,7 @@ var handlers = {
   "SessionEndedRequest": function() {
     console.log(`Session ended in help state: ${this.event.request.reason}`);
   },
-  "AMAZON.YesIntent": function() { 
+  "YesIntent": function() { 
     this.response.speak(trueOrFalse(true));
     this.emit(':responseReady');
   },
